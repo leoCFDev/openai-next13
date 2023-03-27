@@ -157,9 +157,11 @@ SEO optimized description that incorporate best possible template that you can t
     }
   };
   useEffect(() => {
-    setDatabaseId(localStorage.getItem("database") ?? "");
-    setInputDatabase(localStorage.getItem("database") ?? "");
-  });
+    if (databaseId == "") {
+      setDatabaseId(localStorage.getItem("database") ?? "");
+      setInputDatabase(localStorage.getItem("database") ?? "");
+    }
+  }, []);
   return (
     <main
       style={roboto.style}
