@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Roboto_Flex } from "next/font/google";
 import styles from "./page.module.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ClipLoader } from "react-spinners";
 import { OpenAIApi, Configuration } from "openai";
 import { Transition } from "@headlessui/react";
@@ -26,8 +26,8 @@ interface SEO {
   loading: Boolean;
 }
 export default function Home() {
-  const database_id = localStorage.getItem("database") ?? "";
-  const [inputDatabase, setInputDatabase] = useState(database_id);
+  const [databaseId, setDatabaseId] = useState("");
+  const [inputDatabase, setInputDatabase] = useState("");
   const textClickBait = (theme: String): string => {
     return `I want you to respond only in language Portuguese
     I'd like you to take on the role of a YouTube video content creator,
@@ -156,6 +156,10 @@ SEO optimized description that incorporate best possible template that you can t
       toast.error("Ocorreu um erro");
     }
   };
+  useEffect(() => {
+    setDatabaseId(localStorage.getItem("database") ?? "");
+    setInputDatabase(localStorage.getItem("database") ?? "");
+  });
   return (
     <main
       style={roboto.style}
@@ -208,7 +212,7 @@ SEO optimized description that incorporate best possible template that you can t
           <input
             onChange={(e) => setInputDatabase(e.target.value)}
             type="text"
-            defaultValue={database_id}
+            defaultValue={databaseId}
             className="rounded-md w-80 form-input outline-none text-gray-700 border-none font-semibold"
             placeholder="Id da pagina do NOTION"
           />
