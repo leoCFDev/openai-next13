@@ -50,14 +50,15 @@ export default function Home() {
     `;
   };
   const textRoteiro = (theme: String): string => {
-    return `If so, ignore the previous guidance. Create an attractive and captivating video script for YouTube. For the subject of the text, make it in the form of a list with 10 topics explaining each one. Make a script that starts in a fun way and that at the beginning has a summary of the main subject of the video. End by thanking you for your attention and asking you to subscribe and give a like and 
-    maximum 1990 characters.
+    return `If so, ignore the previous guidance. Create an attractive and captivating video script for YouTube with 
+    maximum 1990 characters.  . For the subject of the text, make it in the form of a list with 10 topics explaining each one. Make a script that starts in a fun way and that at the beginning has a summary of the main subject of the video. End by thanking you for your attention and asking you to subscribe and give a like 
 I want you to answer only in Portuguese.
 title: ${theme}
     `;
   };
   const textSEO = (theme: String): string => {
-    return `Please ignore all previous instructions. I want you to respond only in Portuguese.  
+    return `Please ignore all previous instructions. I want you to respond only in Portuguese and 
+    maximum 1990 characters.  
     I want you to act as a very proficient Professional YouTube SEO Person and high 
     end video SEO optimizer that speaks and writes fluent Portuguese. I want you to pretend that
      you know YouTube SEO very well and your a professional in this work. I want you to  pretend
@@ -81,8 +82,7 @@ SEO optimized description that incorporate best possible template that you can t
      of social links url place,   Do not echo my prompt. Do not remind me what I asked you for. Do not apologize. 
      Do not self-reference. Do now use generic filler phrases. Do use  headings with keyword-rich words. Get to
       the point precisely and accurate. Do not explain what and why, just give me your best possible title and description.
- All output shall be in Portuguese and should be in Code box so i can copy it easily and 
- maximum 1990 characters. 
+ All output shall be in Portuguese and should be in Code box so i can copy it easily . 
     `;
   };
   const configuration = new Configuration({
